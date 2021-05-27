@@ -24,15 +24,11 @@ public class BonificacaoDAOTest {
 	}
 
 	@Test
-	public void testAdiconarBonificaçãoException() {
+	public void testAdicionarBonificacaoException() {
 		BonificacaoDAO bonificacaoDAO = BonificacaoDAO.getInstance(PostgresConnector.getSession());
 		Bonificacao bonificacao = new Bonificacao();
 		PostgresConnector.getSession().close();
 		assertFalse(bonificacaoDAO.insert(bonificacao));
-		
-		
-		// pc.cadastrarPlr(LocalDate.now(), 310);
-		// pc.cadastrarPlr(LocalDate.now(), 350);
 	}
 
 	@Test

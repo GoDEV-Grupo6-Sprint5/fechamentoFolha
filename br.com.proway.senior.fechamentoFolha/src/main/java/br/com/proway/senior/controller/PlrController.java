@@ -32,7 +32,7 @@ public class PlrController {
 	 * @param data LocalDate, referente a data informada;
 	 * @param valor double, referente ao valor informado.
 	 * 
-	 * @throws Exception - Caso o {@link Plr} j� exista no banco com
+	 * @throws Exception - Caso o {@link Plr} já exista no banco com
 	 * a mesma data.
 	 * 
 	 * @author Sprint 5: Leonardo Felipe Silva <felipeleao217@gmail.com>;
@@ -54,7 +54,7 @@ public class PlrController {
 			for (Plr plrProcurado : plrsBuscados) {
 				if (plrProcurado.getVencimento().getYear() == data.getYear()) {
 					if (plrProcurado.getVencimento().getMonth() == data.getMonth()) {
-						throw new Exception("PLR ja cadastrado para este per�odo");
+						throw new Exception("PLR ja cadastrado para este perï¿½odo");
 					}
 				} 
 			}

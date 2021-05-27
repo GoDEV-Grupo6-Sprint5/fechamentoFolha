@@ -14,6 +14,7 @@ import org.hibernate.Session;
 
 import br.com.proway.senior.model.Bonificacao;
 import br.com.proway.senior.model.Folha;
+import org.springframework.stereotype.Repository;
 
 /**
  * <h1>Reponsavel pelos comandos de DML.</h1>
@@ -28,6 +29,7 @@ import br.com.proway.senior.model.Folha;
  * @author Sprint 6: Sabrina Schmidt <sabrinaschmidt335@gmail.com>;
  * @author Sprint 6: Samuel Levi <samuel.levi@senior.com.br>
  */
+@Repository
 public final class FolhaDAO implements InterfaceDAO<Folha> {
 	/**
 	 * <h1>Instancia da classe FolhaDAO em Singleton</h1>

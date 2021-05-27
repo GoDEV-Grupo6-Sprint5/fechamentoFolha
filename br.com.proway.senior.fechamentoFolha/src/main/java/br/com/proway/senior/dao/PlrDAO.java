@@ -14,6 +14,7 @@ import org.hibernate.Session;
 import br.com.proway.senior.model.Folha;
 import br.com.proway.senior.model.IPlr;
 import br.com.proway.senior.model.Plr;
+import org.springframework.stereotype.Repository;
 
 /**
  * Possue os metodos CRUD da {@link Plr}.
@@ -25,6 +26,7 @@ import br.com.proway.senior.model.Plr;
  * @author Sprint 6: Sabrina Schmidt <sabrinaschmidt335@gmail.com>;
  * @author Sprint 6: Samuel Levi <samuel.levi@senior.com.br>
  */
+@Repository
 public final class PlrDAO implements InterfaceDAO<Plr> {
 
 	/**

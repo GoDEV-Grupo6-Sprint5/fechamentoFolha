@@ -23,7 +23,7 @@ public class FolhaDto {
 	private double valorImpostoDeRenda;
 	private double valorPlanoSaude;
 	private double valorValeTransporte;
-	private double salarioBruto = 0;
+	private double salarioBruto;
 	private double salarioLiquido;
 	private double valorFGTS;
 	private double bonificacaoColaborador;

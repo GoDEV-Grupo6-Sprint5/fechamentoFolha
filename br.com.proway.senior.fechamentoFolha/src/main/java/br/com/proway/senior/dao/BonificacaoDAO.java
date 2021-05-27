@@ -4,6 +4,7 @@ import br.com.proway.senior.model.Bonificacao;
 import br.com.proway.senior.model.Folha;
 
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaDelete;
@@ -23,6 +24,7 @@ import java.util.List;
  * @version Sprint 6
  * @see Bonificacao
  */
+@Repository
 public class BonificacaoDAO implements InterfaceDAO<Bonificacao> {
 
 	private static BonificacaoDAO instance;
