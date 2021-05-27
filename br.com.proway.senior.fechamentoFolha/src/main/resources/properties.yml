@@ -1,0 +1,7 @@
+debug: true
+spring:
+  application:
+    name: xxxMyLoaderApp
+  cloud:
+    config:
+      uri: http://localhost:8080/config

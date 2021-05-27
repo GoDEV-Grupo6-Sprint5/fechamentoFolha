@@ -2,6 +2,8 @@ package br.com.proway.senior.controller;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
+
 import br.com.proway.senior.dao.FolhaDAO;
 import br.com.proway.senior.dao.PostgresConnector;
 import br.com.proway.senior.model.Bonificacao;
@@ -36,6 +38,8 @@ import br.com.proway.senior.model.externo.interfaces.IPontoFolha;
  * @see Folha
  * @see FolhaBuilder
  */
+
+@Controller
 public class FolhaController {
 
 	/**

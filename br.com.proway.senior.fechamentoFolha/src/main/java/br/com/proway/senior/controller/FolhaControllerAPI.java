@@ -53,17 +53,18 @@ public class FolhaControllerAPI {
 		return ResponseEntity.ok(folhaNormal);
 	}
 
-	@PostMapping
-	public ResponseEntity <FolhaDto> construirFolhaFerias(IColaboradorFolha colaborador, IFeriasFolha ferias, ICargoFolha cargo) {
-		FolhaDto folhaFerias = new FolhaDto(folhaController.construirFolhaFerias(colaborador, ferias, cargo));
-		return ResponseEntity.ok(folhaFerias);
-	}
-
-	@PostMapping
-	public ResponseEntity <FolhaDto> construirFolhaHibrida(IColaboradorFolha colaborador, IPontoFolha ponto, ICargoFolha cargo,
-			IFeriasFolha ferias) {
-		FolhaDto folhaHibrida = new FolhaDto(folhaController.construirFolhaHibrida(colaborador, ponto, cargo, ferias));
-		return ResponseEntity.ok(folhaHibrida);
-	}
+	/*
+	 * @PostMapping public ResponseEntity <FolhaDto>
+	 * construirFolhaFerias(IColaboradorFolha colaborador, IFeriasFolha ferias,
+	 * ICargoFolha cargo) { FolhaDto folhaFerias = new
+	 * FolhaDto(folhaController.construirFolhaFerias(colaborador, ferias, cargo));
+	 * return ResponseEntity.ok(folhaFerias); }
+	 * 
+	 * @PostMapping public ResponseEntity <FolhaDto>
+	 * construirFolhaHibrida(IColaboradorFolha colaborador, IPontoFolha ponto,
+	 * ICargoFolha cargo, IFeriasFolha ferias) { FolhaDto folhaHibrida = new
+	 * FolhaDto(folhaController.construirFolhaHibrida(colaborador, ponto, cargo,
+	 * ferias)); return ResponseEntity.ok(folhaHibrida); }
+	 */
 
 }
