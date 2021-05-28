@@ -28,6 +28,10 @@ public class BonificacaoDAOTest {
 	public void testAdiconarBonificaçãoException() {
 		BonificacaoDAO bonificacaoDAO = BonificacaoDAO.getInstance(PostgresConnector.getSession());
 		Bonificacao bonificacao = new Bonificacao();
+		
+		
+		
+		
 		//bonificacaoDAO.insert(bonificacao);
 	}
 
