@@ -135,8 +135,9 @@ public class FolhaBuilder implements IFolhaBuilder {
 	 * 
 	 * @return void
 	 */
-	public void calcularPlr() {
+	public void calcularPlr(int valor) {
 		PlrController plrController = new PlrController();
+		
 		this.valorPlr = plrController.getValorPlrMes(dataEmissao);
 	}
 

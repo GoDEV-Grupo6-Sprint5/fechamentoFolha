@@ -37,7 +37,7 @@ public class Plr implements IPlr {
 	}
 
 	public void setValorPlr(double valorPlr) {
-		this.valorPlr = valorPlr;
+		this.valorPlr = (valorPlr /100) *1000.0;
 	}
 
 	public LocalDate getVencimento() {

@@ -16,10 +16,6 @@ import br.com.proway.senior.model.Plr;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PlrDAOTest {
 	
-	@Before
-	public void limparTabelas() {
-		PlrDAO.getInstance(PostgresConnector.getSession()).limparTabela();
-	}
 	
 	@Test
 	public void testInsert() {
@@ -103,7 +99,9 @@ public class PlrDAOTest {
 		plr1.setValorPlr(1000);
 		plr2.setValorPlr(1500);
 		plrDao.insert(plr1);
+		System.out.println(plr1);
 		plrDao.insert(plr2);
+		System.out.println(plr2);
 		
 		Plr plr2Updated = plrDao.getById(plrDao.getAll().get(0).getId());
 		plr2Updated.setValorPlr(1600);

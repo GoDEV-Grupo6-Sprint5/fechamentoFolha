@@ -1,26 +1,15 @@
 package br.com.proway.senior.controller;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
 
-import org.junit.Before;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
-import br.com.proway.senior.dao.PlrDAO;
-import br.com.proway.senior.dao.PostgresConnector;
+import br.com.proway.senior.model.Plr;
 
 public class PlrControllerTest {
-
-	@Before
-	public void limparTabela() {
-		PostgresConnector pc = new PostgresConnector();
-		pc.toString(); // Instancia boba para aumentar coverage
-		PlrDAO.getInstance(PostgresConnector.getSession()).limparTabela();
-	}
-	
 	
 	@Test
 	public void testCadastrarPlr() throws Exception {
@@ -83,5 +72,12 @@ public class PlrControllerTest {
 		PlrController pc = new PlrController();
 		pc.cadastrarPlr(LocalDate.now(), 350);
 		assertTrue(pc.buscarTodosPlr().size() == 1);
+	}
+	@Test
+	public void testPorcentagemPlr() throws Exception {
+		Plr plr = new Plr();
+		plr.setValorPlr(8);
+		assertEquals(80.0, plr.getValorPlr(), 0.01);
+		
 	}
 }

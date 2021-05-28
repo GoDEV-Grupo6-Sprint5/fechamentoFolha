@@ -12,7 +12,7 @@ public class BonificacaoDtoTest {
 		@Test
 		public void testeGetPorcentagem() {
 			Bonificacao bonificacao = new Bonificacao();
-			bonificacao.setPorcentagemBonificacaoColaborador(1.0);
+			bonificacao.setPorcentagemBonificacaoColaborador(2.0);
 			BonificacaoDto bonificacaoDto = new BonificacaoDto(bonificacao);
 			assertNotNull(bonificacaoDto.getPorcentagemBonificacaoColaborador());
 		}

@@ -5,8 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import br.com.proway.senior.model.Bonificacao;
@@ -19,10 +17,6 @@ import br.com.proway.senior.model.externo.PontoFolha;
 
 public class FolhaDAOTest {
 
-	@Before
-	public void limparTabela() {
-		FolhaDAO.getInstance(PostgresConnector.getSession()).limparTabela();
-	}
 
 	@Test
 	public void testInsert() {
@@ -164,9 +158,4 @@ public class FolhaDAOTest {
 		assertEquals(folhaValor.get(0), folha);
 	}
 
-	@Test
-	public void testGetValuesBetween() {
-		FolhaDAO folhaDAO = FolhaDAO.getInstance(PostgresConnector.getSession());
-		System.out.println(folhaDAO.getValuesBetween("salarioBruto", 2570.0, 2571.0));
-	}
 }

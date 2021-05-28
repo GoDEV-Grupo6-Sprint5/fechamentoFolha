@@ -19,10 +19,7 @@ import static org.junit.Assert.*;
 
 public class FolhaControllerTest {
 	
-	@Before
-	public void limparTabela() {
-		FolhaDAO.getInstance(PostgresConnector.getSession()).limparTabela();
-	}
+	
 	
 	@Test
 	public void AtestConstruirCargoFolha() {

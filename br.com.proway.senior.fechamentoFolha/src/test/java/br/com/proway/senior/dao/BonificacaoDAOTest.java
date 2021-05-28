@@ -9,10 +9,6 @@ import br.com.proway.senior.model.Bonificacao;
 
 public class BonificacaoDAOTest {
 
-	@Before
-	public void limparTabelas() {
-		BonificacaoDAO.getInstance(PostgresConnector.getSession()).limparTabela();
-	}
 
 	@Test
 	public void testAdicionarBonificacao() {
@@ -20,7 +16,8 @@ public class BonificacaoDAOTest {
 		Bonificacao bonificacao = new Bonificacao();
 		bonificacaoDAO.insert(bonificacao);
 		bonificacao.getPorcentagemBonificacaoColaborador();
-		assertNotNull(bonificacao.getPorcentagemBonificacaoColaborador());
+		assertNotNull(bonificacao);
+		System.out.println(bonificacao);
 	}
 
 	@Test
@@ -30,9 +27,6 @@ public class BonificacaoDAOTest {
 		PostgresConnector.getSession().close();
 		assertFalse(bonificacaoDAO.insert(bonificacao));
 		
-		
-		// pc.cadastrarPlr(LocalDate.now(), 310);
-		// pc.cadastrarPlr(LocalDate.now(), 350);
 	}
 
 	@Test
@@ -52,9 +46,10 @@ public class BonificacaoDAOTest {
 		Bonificacao bonificacao = new Bonificacao();
 		bonificacao.setPorcentagemBonificacaoColaborador(8);
 		bonificacaoDAO.insert(bonificacao);
-
+System.out.println(bonificacao.getPorcentagemBonificacaoColaborador());
 		bonificacao.setPorcentagemBonificacaoColaborador(7);
 		bonificacaoDAO.update(bonificacao);
+		System.out.println(bonificacao.getPorcentagemBonificacaoColaborador());
 		assertEquals(0.07, bonificacao.getPorcentagemBonificacaoColaborador(), 0.0);
 	}
 }

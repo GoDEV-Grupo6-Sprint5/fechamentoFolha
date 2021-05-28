@@ -32,7 +32,7 @@ public class PlrController {
 	 * @param data LocalDate, referente a data informada;
 	 * @param valor double, referente ao valor informado.
 	 * 
-	 * @throws Exception - Caso o {@link Plr} já exista no banco com
+	 * @throws Exception - Caso o {@link Plr} jï¿½ exista no banco com
 	 * a mesma data.
 	 * 
 	 * @author Sprint 5: Leonardo Felipe Silva <felipeleao217@gmail.com>;
@@ -169,6 +169,7 @@ public class PlrController {
 				}
 			}
  		}
+		
 		return 0.0;
 	}
 }
