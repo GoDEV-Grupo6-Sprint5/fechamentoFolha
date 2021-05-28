@@ -51,16 +51,18 @@ public class BonificacaoDAO implements InterfaceDAO<Bonificacao> {
 	 * @see Bonificacao
 	 */
 	public boolean insert(Bonificacao bonificacaoASerInserida) {
-		if (!session.getTransaction().isActive())
+		if (!session.getTransaction().isActive()) {
 			session.beginTransaction();
-		try {
-			session.save(bonificacaoASerInserida);
-			session.getTransaction().commit();
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
+			try {
+				session.save(bonificacaoASerInserida);
+				session.getTransaction().commit();
+				return true;
+			} catch (Exception e) {
+				e.printStackTrace();
+				return false;
+			}
 		}
+		return false;
 	}
 
 	public boolean update(Bonificacao bonificacaoASerAlterada) {
@@ -78,19 +80,22 @@ public class BonificacaoDAO implements InterfaceDAO<Bonificacao> {
 	}
 
 	/**
-	 * Metodo que deleta 
+	 * Metodo que deleta
 	 */
 	public boolean delete(Bonificacao bonificacaoASerDeletada) {
-		if (!session.getTransaction().isActive())
+		if (!session.getTransaction().isActive()) {
 			session.beginTransaction();
-		try {
-			session.delete(bonificacaoASerDeletada);
-			session.getTransaction().commit();
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
+			try {
+				session.delete(bonificacaoASerDeletada);
+				session.getTransaction().commit();
+				return true;
+			} catch (Exception e) {
+				e.printStackTrace();
+				return false;
+			}
+
 		}
+		return false;
 	}
 
 	/**

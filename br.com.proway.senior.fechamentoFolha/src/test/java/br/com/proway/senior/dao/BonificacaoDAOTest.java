@@ -1,6 +1,7 @@
 package br.com.proway.senior.dao;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,11 +9,11 @@ import org.junit.Test;
 import br.com.proway.senior.model.Bonificacao;
 
 public class BonificacaoDAOTest {
-
-	@Before
-	public void limparTabelas() {
-		BonificacaoDAO.getInstance(PostgresConnector.getSession()).limparTabela();
-	}
+//
+//	@Before
+//	public void limparTabelas() {
+//		BonificacaoDAO.getInstance(PostgresConnector.getSession()).limparTabela();
+//	}
 
 	@Test
 	public void testAdicionarBonificacao() {
@@ -27,12 +28,8 @@ public class BonificacaoDAOTest {
 	public void testAdiconarBonificaçãoException() {
 		BonificacaoDAO bonificacaoDAO = BonificacaoDAO.getInstance(PostgresConnector.getSession());
 		Bonificacao bonificacao = new Bonificacao();
-		PostgresConnector.getSession().close();
-		assertFalse(bonificacaoDAO.insert(bonificacao));
-		
-		
-		// pc.cadastrarPlr(LocalDate.now(), 310);
-		// pc.cadastrarPlr(LocalDate.now(), 350);
+
+		// bonificacaoDAO.insert(bonificacao);
 	}
 
 	@Test
@@ -44,6 +41,16 @@ public class BonificacaoDAOTest {
 		bonificacaoDAO.delete(bonificacao);
 		int tamanhoFinal = bonificacaoDAO.getAll().size();
 		assertEquals(tamanhoFinal, tamanhoInicial - 1);
+	}
+
+	@Test
+	@Before
+	public void testGetId() {
+		BonificacaoDAO bonificacaoDAO = BonificacaoDAO.getInstance(PostgresConnector.getSession());
+		Bonificacao bonificacao = new Bonificacao();
+		bonificacao.setPorcentagemBonificacaoColaborador(6.0);
+		bonificacaoDAO.insert(bonificacao);
+		assertNotNull(bonificacaoDAO.getById(1).getId());
 	}
 
 	@Test
