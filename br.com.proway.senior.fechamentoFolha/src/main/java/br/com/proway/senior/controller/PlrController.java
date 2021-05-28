@@ -47,7 +47,7 @@ public class PlrController {
 		PlrDAO db = PlrDAO.getInstance(PostgresConnector.getSession());
 		Plr plr = new Plr();
 		plr.setVencimento(data);
-		plr.setValorPlr(valor);
+		plr.setValorPorcentagemPlr(valor);
 		
 		ArrayList<Plr> plrsBuscados = (ArrayList<Plr>) db.getAll(); 
 		if(!plrsBuscados.isEmpty()) {
@@ -130,7 +130,7 @@ public class PlrController {
 			for(Plr plr : plrs) {
 				if(plr.getVencimento().getYear() == data.getYear()) {
 					if(plr.getVencimento().getMonth() == data.getMonth()) {
-						plr.setValorPlr(valor);
+						plr.setValorPorcentagemPlr(valor);
 						db.update(plr);
 					}
 				}
@@ -165,7 +165,7 @@ public class PlrController {
 		for(Plr plr : plrs) {
 			if(plr.getVencimento().getYear() == date.getYear()) {
 				if(plr.getVencimento().getMonth() == date.getMonth()) {
-					return plr.getValorPlr();
+					return plr.getValorPorcentagemPlr();
 				}
 			}
  		}

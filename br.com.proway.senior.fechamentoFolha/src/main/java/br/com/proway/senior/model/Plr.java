@@ -32,11 +32,11 @@ public class Plr implements IPlr {
 	private double valorPlr;
 	private LocalDate vencimento;
 
-	public double getValorPlr() {
+	public double getValorPorcentagemPlr() {
 		return valorPlr;
 	}
 
-	public void setValorPlr(double valorPlr) {
+	public void setValorPorcentagemPlr(double valorPlr) {
 		this.valorPlr = (valorPlr /100) *1000.0;
 	}
 

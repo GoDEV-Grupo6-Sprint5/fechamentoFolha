@@ -40,7 +40,7 @@ public class PlrControllerTest {
 		pc.cadastrarPlr(LocalDate.of(2021, 06, 18), 350);
 
 		pc.atualizarPlr(LocalDate.now(), 370.0);
-		assertTrue(pc.buscarTodosPlr().get(1).getValorPlr() == 370.0);
+		assertTrue(pc.buscarTodosPlr().get(1).getValorPorcentagemPlr() == 370.0);
 	}
 	
 	@Test(expected = Exception.class)
@@ -72,12 +72,5 @@ public class PlrControllerTest {
 		PlrController pc = new PlrController();
 		pc.cadastrarPlr(LocalDate.now(), 350);
 		assertTrue(pc.buscarTodosPlr().size() == 1);
-	}
-	@Test
-	public void testPorcentagemPlr() throws Exception {
-		Plr plr = new Plr();
-		plr.setValorPlr(8);
-		assertEquals(80.0, plr.getValorPlr(), 0.01);
-		
 	}
 }
