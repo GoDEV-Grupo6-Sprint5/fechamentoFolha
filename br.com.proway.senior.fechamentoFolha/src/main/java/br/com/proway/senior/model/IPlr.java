@@ -21,9 +21,9 @@ import java.time.LocalDate;
  */
 public interface IPlr {
 	
-	public double getValorPlr();
+	public double getValorPorcentagemPlr();
 
-	public void setValorPlr(double valorPlr);
+	public void setValorPorcentagemPlr(double valorPlr);
 
 	public LocalDate getVencimento();
 

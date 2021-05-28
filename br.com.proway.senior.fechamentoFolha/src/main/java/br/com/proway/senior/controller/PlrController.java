@@ -32,7 +32,7 @@ public class PlrController {
 	 * @param data LocalDate, referente a data informada;
 	 * @param valor double, referente ao valor informado.
 	 * 
-	 * @throws Exception - Caso o {@link Plr} já exista no banco com
+	 * @throws Exception - Caso o {@link Plr} jï¿½ exista no banco com
 	 * a mesma data.
 	 * 
 	 * @author Sprint 5: Leonardo Felipe Silva <felipeleao217@gmail.com>;
@@ -47,7 +47,7 @@ public class PlrController {
 		PlrDAO db = PlrDAO.getInstance(PostgresConnector.getSession());
 		Plr plr = new Plr();
 		plr.setVencimento(data);
-		plr.setValorPlr(valor);
+		plr.setValorPorcentagemPlr(valor);
 		
 		ArrayList<Plr> plrsBuscados = (ArrayList<Plr>) db.getAll(); 
 		if(!plrsBuscados.isEmpty()) {
@@ -130,7 +130,7 @@ public class PlrController {
 			for(Plr plr : plrs) {
 				if(plr.getVencimento().getYear() == data.getYear()) {
 					if(plr.getVencimento().getMonth() == data.getMonth()) {
-						plr.setValorPlr(valor);
+						plr.setValorPorcentagemPlr(valor);
 						db.update(plr);
 					}
 				}
@@ -165,7 +165,7 @@ public class PlrController {
 		for(Plr plr : plrs) {
 			if(plr.getVencimento().getYear() == date.getYear()) {
 				if(plr.getVencimento().getMonth() == date.getMonth()) {
-					return plr.getValorPlr();
+					return plr.getValorPorcentagemPlr();
 				}
 			}
  		}

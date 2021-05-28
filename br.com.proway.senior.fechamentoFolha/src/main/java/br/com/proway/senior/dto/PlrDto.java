@@ -29,7 +29,7 @@ public class PlrDto {
 	public PlrDto(Plr plr) {
 
 		// Plr
-		this.valorPlr = plr.getValorPlr();
+		this.valorPlr = plr.getValorPorcentagemPlr();
 		this.vencimento = plr.getVencimento();
 
 	}
