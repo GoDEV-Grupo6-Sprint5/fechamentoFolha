@@ -24,23 +24,23 @@ public class PlrControllerTest {
 	
 	@Test
 	public void testCadastrarPlr() throws Exception {
-		PlrController pc =  new PlrController();
-		pc.cadastrarPlr(LocalDate.now(), 350);
-		assertTrue(pc.buscarTodosPlr().size() == 1);
+		PlrController controller =  new PlrController();
+		controller.cadastrarPlr(LocalDate.now(), 350);
+		assertTrue(controller.buscarTodosPlr().size() == 1);
 	}
 	
 	@Test
 	public void testCadastrarMaisDeUmPlr() throws Exception {
-		PlrController pc =  new PlrController();
-		pc.cadastrarPlr(LocalDate.of(2021, 05, 18), 350);
-		pc.cadastrarPlr(LocalDate.of(2021, 06, 18), 350);
+		PlrController controller =  new PlrController();
+		controller.cadastrarPlr(LocalDate.of(2021, 05, 18), 350);
+		controller.cadastrarPlr(LocalDate.of(2021, 06, 18), 350);
 	}
 	
 	@Test(expected = Exception.class)
 	public void testCadastrarPlrFalso() throws Exception{
-		PlrController pc =  new PlrController();
-		pc.cadastrarPlr(LocalDate.now(), 310);
-		pc.cadastrarPlr(LocalDate.now(), 350);
+		PlrController controller =  new PlrController();
+		controller.cadastrarPlr(LocalDate.now(), 310);
+		controller.cadastrarPlr(LocalDate.now(), 350);
 	}
 	
 	@Test
@@ -50,8 +50,10 @@ public class PlrControllerTest {
 		pc.cadastrarPlr(LocalDate.of(2021, 05, 18), 350);
 		pc.cadastrarPlr(LocalDate.of(2021, 06, 18), 350);
 
-		pc.atualizarPlr(LocalDate.now(), 370.0);
-		assertTrue(pc.buscarTodosPlr().get(1).getValorPorcentagemPlr() == 370.0);
+		pc.atualizarPlr(LocalDate.of(2021,05,18), 370.0);
+	
+		assertTrue(pc.buscarTodosPlr().get(1).getValorPorcentagemPlr()==3700);
+		System.err.println(pc.buscarTodosPlr().get(0).getValorPorcentagemPlr());
 	}
 	
 	@Test(expected = Exception.class)
@@ -69,7 +71,7 @@ public class PlrControllerTest {
 	public void testGetValorPlrMes() throws Exception {
 		PlrController pc =  new PlrController();
 		pc.cadastrarPlr(LocalDate.now(), 350);
-		assertTrue(pc.getValorPlrMes(LocalDate.now()) == 350.00);
+		assertTrue(pc.getValorPlrMes(LocalDate.now()) == 3500);
 	}
 	
 	@Test
