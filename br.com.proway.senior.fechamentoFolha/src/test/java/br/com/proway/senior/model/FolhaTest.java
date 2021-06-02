@@ -11,8 +11,7 @@ public class FolhaTest {
 	@Test
 	public void testGetters() {
 		Folha folha = new Folha();
-
-		assertTrue(folha.getDataEmissao() == null);
+		assertTrue(folha.getDataEmissao()==null);
 		assertTrue(folha.getFeriasLiquido() == 0.0);
 		assertTrue(folha.getId() == 0);
 		assertTrue(folha.getIdColaborador() == null);

@@ -53,7 +53,6 @@ public class PlrControllerTest {
 		pc.atualizarPlr(LocalDate.of(2021,05,18), 370.0);
 	
 		assertTrue(pc.buscarTodosPlr().get(1).getValorPorcentagemPlr()==3700);
-		System.err.println(pc.buscarTodosPlr().get(0).getValorPorcentagemPlr());
 	}
 	
 	@Test(expected = Exception.class)

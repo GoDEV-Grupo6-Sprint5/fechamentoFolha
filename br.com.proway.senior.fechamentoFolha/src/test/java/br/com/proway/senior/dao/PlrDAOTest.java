@@ -57,8 +57,8 @@ public class PlrDAOTest {
 		Plr plr2 = new Plr();
 		plr1.setVencimento(LocalDate.of(2021, 02, 10));
 		plr2.setVencimento(LocalDate.of(2021, 01, 10));
-		plr1.setValorPorcentagemPlr(1000);
-		plr2.setValorPorcentagemPlr(1500);
+		plr1.setValorPorcentagemPlr(100);
+		plr2.setValorPorcentagemPlr(150);
 		plrDao.insert(plr1);
 		plrDao.insert(plr2);
 		assertTrue (plrDao.getById(plrDao.getAll().get(1).getId()).getValorPorcentagemPlr() == 1500);
@@ -71,8 +71,8 @@ public class PlrDAOTest {
 		Plr plr2 = new Plr();
 		plr1.setVencimento(LocalDate.of(2021, 02, 10));
 		plr2.setVencimento(LocalDate.of(2021, 01, 10));
-		plr1.setValorPorcentagemPlr(1000);
-		plr2.setValorPorcentagemPlr(1500);
+		plr1.setValorPorcentagemPlr(100);
+		plr2.setValorPorcentagemPlr(150);
 		plrDao.insert(plr1);
 		plrDao.insert(plr2);
 		assertTrue(plrDao.getByDate(LocalDate.of(2021, 02, 10)).get(0).getValorPorcentagemPlr() == 1000);
@@ -100,13 +100,13 @@ public class PlrDAOTest {
 		Plr plr2 = new Plr();
 		plr1.setVencimento(LocalDate.of(2021, 02, 5));
 		plr2.setVencimento(LocalDate.of(2021, 01, 5));
-		plr1.setValorPorcentagemPlr(1000);
-		plr2.setValorPorcentagemPlr(1500);
+		plr1.setValorPorcentagemPlr(100);
+		plr2.setValorPorcentagemPlr(150);
 		plrDao.insert(plr1);
 		plrDao.insert(plr2);
 		
 		Plr plr2Updated = plrDao.getById(plrDao.getAll().get(0).getId());
-		plr2Updated.setValorPorcentagemPlr(1600);
+		plr2Updated.setValorPorcentagemPlr(160);
 		plrDao.update(plr2Updated);
 		
 		assertTrue(plrDao.getById(plrDao.getAll().get(1).getId()).getValorPorcentagemPlr() == 1600);
