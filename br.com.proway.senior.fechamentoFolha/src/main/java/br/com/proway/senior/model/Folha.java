@@ -54,6 +54,7 @@ public class Folha implements IFolha {
 	private double valorFerias;
 	private double valorInssFerias;
 	private double valorImpostoDeRendaFerias;
+
 	private double feriasLiquido;
 	
 	@Column(name = "valorplr")

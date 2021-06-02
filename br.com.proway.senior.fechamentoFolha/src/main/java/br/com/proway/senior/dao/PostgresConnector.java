@@ -39,7 +39,7 @@ public class PostgresConnector {
 					.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect")
 					.setProperty("hibernate.show_sql", "true")
 					.setProperty("hibernate.format_sql", "false")
-					.setProperty("hibernate.hbm2ddl.auto", "create")
+					.setProperty("hibernate.hbm2ddl.auto", "update")
 					.setProperty("hibernate.connection.autocommit", "true")
 					.addAnnotatedClass(Folha.class)
 					.addAnnotatedClass(Plr.class)
