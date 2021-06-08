@@ -2,6 +2,7 @@ package br.com.proway.senior.builder;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
@@ -47,15 +48,8 @@ public class TesteBuilder{
 		FolhaDirector director = new FolhaDirector(folhaBuilder);
 		director.createFolhaFerias(colaborador, cargo, ferias);
 		Folha folha = folhaBuilder.build();
-		assertEquals("Folha [id = 0, idColaborador = 2, dataEmissao = " +
-				"2021-06-01, "
-				+ "valorHorasTrabalhadas = 0.0, valorHorasFaltas = 0.0, valorHorasExtras = "
-				+ "0.0, valorReflexoDSR = 0.0, valorInss = 0.0, valorImpostoDeRenda = 0.0, "
-				+ "valorPlanoSaude = 0.0, valorValeTransporte = 0.0, salarioBruto = 0.0, "
-				+ "salarioLiquido = 0.0, valorFerias = 2975.9999999999995, valorInssFerias = "
-				+ "327.35999999999996, valorImpostoDeRendaFerias = 55.84799999999993, "
-				+ "feriasLiquido = 2592.7919999999995, valorFGTS = 0.0, valorPLR = "
-				+ "0.0, bonificacao = 0.0]", folha.toString());
+		System.err.println(folha.getFeriasLiquido());
+		assertEquals(2592.79, folha.getFeriasLiquido(),0.1);
 	}
 	
 	@Test

@@ -67,7 +67,7 @@ public class BonificacaoDAO implements InterfaceDAO<Bonificacao> {
 
 	public boolean update(Bonificacao bonificacaoASerAlterada) {
 		session.clear();
-		if (!session.getTransaction().isActive())
+		if (!session.getTransaction().isActive()) 
 			session.beginTransaction();
 		try {
 			session.update(bonificacaoASerAlterada);
@@ -83,6 +83,7 @@ public class BonificacaoDAO implements InterfaceDAO<Bonificacao> {
 	 * Metodo que deleta
 	 */
 	public boolean delete(Bonificacao bonificacaoASerDeletada) {
+		session.clear();
 		if (!session.getTransaction().isActive()) {
 			session.beginTransaction();
 			try {
