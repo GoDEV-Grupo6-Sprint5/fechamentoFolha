@@ -144,4 +144,29 @@ public class FolhaDAOTest {
 		assertEquals(folhaData.getDataEmissao(), LocalDate.now());
 	}
 
+	@Test
+	public void testGetDoubleByColumn() {
+		FolhaDAO folhaDAO = FolhaDAO.getInstance(PostgresConnector.getSession());
+		ColaboradorFolha colab = new ColaboradorFolha(9, false, 100, 43, 205);
+		PontoFolha ponto = new PontoFolha(220, 2, 1);
+		CargoFolha cargo = new CargoFolha(1752, 20);
+
+		FolhaBuilder builder = new FolhaBuilder();
+		FolhaDirector director = new FolhaDirector(builder);
+
+		Bonificacao bonificacao = new Bonificacao();
+		bonificacao.setPorcentagemBonificacaoColaborador(0);
+
+		Folha folha = director.createFolhaNormal(colab, ponto, cargo, bonificacao);
+		folhaDAO.insert(folha);
+
+		List<Folha> folhaValor = folhaDAO.getDoubleByColumn("valorFGTS", 159.6244363636364);
+		assertEquals(folhaValor.get(0), folha);
+	}
+
+	@Test
+	public void testGetValuesBetween() {
+		FolhaDAO folhaDAO = FolhaDAO.getInstance(PostgresConnector.getSession());
+		System.out.println(folhaDAO.getValuesBetween("salarioBruto", 2570.0, 2571.0));
+	}
 }

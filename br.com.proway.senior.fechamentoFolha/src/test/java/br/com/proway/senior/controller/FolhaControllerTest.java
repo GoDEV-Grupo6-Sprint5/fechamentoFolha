@@ -5,8 +5,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -126,6 +124,9 @@ public class FolhaControllerTest {
 		
 		FolhaController fc = new FolhaController();
 		
+		//verificar a necessidade desta informação...pois o controller já chama o DAO.
+		//FolhaDAO db = FolhaDAO.getInstance(PostgresConnector.getSession());
+		
 		CargoFolha cargo = new CargoFolha(3500, 0);
 		CargoFolha cargoFolha = fc.construirCargoFolha(cargo.getSalarioBase(), cargo.getPercentualInsalubridade());
 		
@@ -142,6 +143,10 @@ public class FolhaControllerTest {
 		
 		boolean folhaAlterada = fc.editarFolha(folha);
 		assertTrue(folhaAlterada);
+		
+		//fc.editarFolha(folha);
+		//assertTrue(db.getAll().lastIndexOf(folha.getId());
+	//assertTrue(db.getAll().get(1).getDataEmissao().equals(LocalDate.of(2021, 05, 9)));
 		
 	}
 	
@@ -199,6 +204,7 @@ public class FolhaControllerTest {
 	@Test
 	public void ItestGetById(){
 		FolhaController fc = new FolhaController();
+		FolhaDAO db = FolhaDAO.getInstance(PostgresConnector.getSession());
 		CargoFolha cargo = new CargoFolha(888, 0);
 		CargoFolha cargoFolha = fc.construirCargoFolha(cargo.getSalarioBase(), cargo.getPercentualInsalubridade());
 		ColaboradorFolha colaborador = new ColaboradorFolha(0, false, 0, 0, 0);
@@ -207,8 +213,9 @@ public class FolhaControllerTest {
 		bonificacao.setPorcentagemBonificacaoColaborador(0);
 		Folha folha = fc.construirFolhaNormal(colaborador, ponto, cargoFolha, bonificacao);
 		fc.salvarFolha(folha);
-		assertEquals(folha, fc.getById(folha.getId()));
-		
+
+		assertEquals(folha, fc.getById(4));
+
 	}
 	
 }
