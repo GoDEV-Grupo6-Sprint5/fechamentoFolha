@@ -19,10 +19,10 @@ import br.com.proway.senior.model.externo.PontoFolha;
 
 public class FolhaDAOTest {
 
-//	@Before
-//	public void limparTabela() {
-//		FolhaDAO.getInstance(PostgresConnector.getSession()).limparTabela();
-//	}
+	@Before
+	public void limparTabela() {
+		FolhaDAO.getInstance(PostgresConnector.getSession()).limparTabela();
+	}
 
 	@Test
 	public void testInsert() {
@@ -144,4 +144,5 @@ public class FolhaDAOTest {
 		assertEquals(folhaData.getDataEmissao(), LocalDate.now());
 	}
 
+	
 }
